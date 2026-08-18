@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles } from 'lucide-react';
+import { AcdyonLogoIcon } from './AcdyonLogo';
 
 interface FooterProps {
   onLogoClick: () => void;
@@ -17,16 +17,15 @@ export const Footer: React.FC<FooterProps> = ({ onLogoClick }) => {
               className="flex items-center space-x-2.5 text-left group focus:outline-none mb-4"
               title="AcdyOn Pathway AI (Click 5x for Easter Egg)"
             >
-              <div className="w-9 h-9 rounded-xl bg-white text-navy-950 flex items-center justify-center font-extrabold text-lg shadow-sm">
-                <span className="tracking-tighter">A</span>
+              <div className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-800 shadow-sm">
+                <AcdyonLogoIcon className="w-5 h-5" idSuffix="footer" />
               </div>
               <div className="flex items-center space-x-1.5">
-                <span className="font-extrabold text-xl text-white tracking-tight">
+                <span className="font-bold text-xl text-white tracking-tight">
                   AcdyOn
                 </span>
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-semibold bg-acdyon-indigoLight text-acdyon-indigo">
-                  <Sparkles className="w-2.5 h-2.5 mr-0.5" />
-                  Pathway AI
+                <span className="font-medium text-base text-slate-400">
+                  Pathway
                 </span>
               </div>
             </button>

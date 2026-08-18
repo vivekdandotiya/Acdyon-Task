@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { easeOutCustom, heroTimeline } from '../utils/motion';
+import { AcdyonLogoIcon } from './AcdyonLogo';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -92,25 +93,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               isScrolled ? 'glass-nav' : ''
             }`}
           >
-            {/* LEFT: Logo & Subtitle */}
+            {/* LEFT: Logo Matching Image (Gradient Mark + AcdyOn Pathway) */}
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: heroTimeline.logo?.duration ?? 0.4, delay: heroTimeline.logo?.delay ?? 0.1, ease: easeOutCustom }}
               onClick={handleLogoPress}
-              whileHover={{ scale: 1.03, rotate: 1.5 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="flex items-center space-x-2.5 cursor-pointer group select-none"
             >
-              <div className="w-8 h-8 rounded-xl bg-navy-950 flex items-center justify-center text-white shadow-subtle group-hover:bg-acdyon-blue transition-colors duration-200">
-                <Sparkles className="w-4 h-4 text-acdyon-blueLight group-hover:text-white transition-colors duration-200" />
+              <div className="w-8 h-8 rounded-xl bg-slate-900 flex items-center justify-center shadow-subtle group-hover:bg-slate-950 transition-colors duration-200">
+                <AcdyonLogoIcon className="w-5 h-5" idSuffix="nav" />
               </div>
-              <div className="flex flex-col">
+              <div className="flex items-center space-x-1.5">
                 <span className="text-lg font-bold tracking-tight text-navy-950 group-hover:text-acdyon-blue transition-colors duration-200">
                   AcdyOn
                 </span>
-                <span className="text-[10px] font-semibold tracking-wider text-slate-500 uppercase -mt-1 group-hover:text-acdyon-blue transition-colors duration-200">
-                  PATHWAY AI
+                <span className="text-base font-semibold text-slate-600 group-hover:text-navy-950 transition-colors duration-200">
+                  Pathway
                 </span>
               </div>
             </motion.div>
@@ -191,7 +192,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
         </div>
       </motion.header>
 
-      {/* Mobile Full-Screen / Large Navigation Surface */}
+      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
