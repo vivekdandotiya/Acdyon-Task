@@ -11,27 +11,26 @@ export const AcdyonLogoIcon: React.FC<{ className?: string; idSuffix?: string }>
   className = 'w-6 h-6',
   idSuffix = 'nav',
 }) => {
-  const gradId = `acdyonLogoGrad_${idSuffix}`;
+  const gradId = `acdyonFavGrad_${idSuffix}`;
 
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
+      <rect width="32" height="32" rx="8" fill="#0F172A" />
+      {/* Sleek Executive AcdyOn Pathway Monogram */}
+      <path d="M16 6L7.5 23.5H12L16 15.5L20 23.5H24.5L16 6Z" fill={`url(#${gradId})`} />
+      <circle cx="16" cy="15.5" r="2" fill="#60A5FA" />
+      <path d="M10.5 18H21.5" stroke="#3B82F6" strokeWidth="2" strokeLinecap="round" />
       <defs>
-        <linearGradient id={gradId} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#A855F7" />
-          <stop offset="50%" stopColor="#7C3AED" />
-          <stop offset="100%" stopColor="#2563EB" />
+        <linearGradient id={gradId} x1="16" y1="6" x2="16" y2="23.5" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#60A5FA" />
+          <stop offset="1" stopColor="#2563EB" />
         </linearGradient>
       </defs>
-      {/* Sleek Geometric Lightning / Pathway Mark matching brand visual */}
-      <path
-        d="M14 2L3.5 13H11.5L9.5 22L20.5 11H12.5L14 2Z"
-        fill={`url(#${gradId})`}
-      />
     </svg>
   );
 };

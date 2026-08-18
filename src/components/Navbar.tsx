@@ -93,7 +93,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               isScrolled ? 'glass-nav' : ''
             }`}
           >
-            {/* LEFT: Logo Matching Image (Gradient Mark + AcdyOn Pathway) */}
+            {/* LEFT: Logo Matching Image (Executive Monogram + AcdyOn Pathway) */}
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -103,9 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               whileTap={{ scale: 0.97 }}
               className="flex items-center space-x-2.5 cursor-pointer group select-none"
             >
-              <div className="w-8 h-8 rounded-xl bg-slate-900 flex items-center justify-center shadow-subtle group-hover:bg-slate-950 transition-colors duration-200">
-                <AcdyonLogoIcon className="w-5 h-5" idSuffix="nav" />
-              </div>
+              <AcdyonLogoIcon className="w-8 h-8 rounded-xl shadow-subtle" idSuffix="nav" />
               <div className="flex items-center space-x-1.5">
                 <span className="text-lg font-bold tracking-tight text-navy-950 group-hover:text-acdyon-blue transition-colors duration-200">
                   AcdyOn

@@ -17,9 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onLogoClick }) => {
               className="flex items-center space-x-2.5 text-left group focus:outline-none mb-4"
               title="AcdyOn Pathway AI (Click 5x for Easter Egg)"
             >
-              <div className="w-9 h-9 rounded-xl bg-slate-900 flex items-center justify-center border border-slate-800 shadow-sm">
-                <AcdyonLogoIcon className="w-5 h-5" idSuffix="footer" />
-              </div>
+              <AcdyonLogoIcon className="w-9 h-9 rounded-xl shadow-sm" idSuffix="footer" />
               <div className="flex items-center space-x-1.5">
                 <span className="font-bold text-xl text-white tracking-tight">
                   AcdyOn
