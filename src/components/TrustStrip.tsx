@@ -30,9 +30,9 @@ export const TrustStrip: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="flex items-center space-x-3 p-3 rounded-xl bg-slate-900/90 border border-slate-700/80 shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
+                  className="flex items-center space-x-3 p-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-[0_8px_20px_rgba(0,0,0,0.3)]"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 text-white flex items-center justify-center shrink-0 shadow-subtle">
+                  <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 text-white flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
                     <IconComp className="w-4 h-4" />
                   </div>
                   <div>

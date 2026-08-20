@@ -34,7 +34,7 @@ export const HowItWorks: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section Header with Reveal */}
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-navy-950 bg-slate-100 px-3 py-1 rounded-lg border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
+          <span className="text-xs font-bold uppercase tracking-wider text-navy-950 bg-slate-100 px-3.5 py-1 rounded-full border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
             Guided Framework
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight mt-4 mb-4">
@@ -70,12 +70,12 @@ export const HowItWorks: React.FC = () => {
                 whileHover={{ y: -4, boxShadow: '0 24px 55px -10px rgba(0,0,0,0.18)' }}
                 className="glass-card-light rounded-3xl p-8 border border-slate-900/15 shadow-[0_18px_45px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 relative group z-10"
               >
-                {/* Large Elegant Number & Defined Box Icon */}
+                {/* Large Elegant Number & Circular Icon Badge */}
                 <div className="flex items-center justify-between mb-8">
                   <span className="text-5xl font-extrabold text-slate-300 group-hover:text-navy-950 transition-colors duration-200 tracking-tighter">
                     {step.num}
                   </span>
-                  <div className="w-12 h-12 rounded-2xl bg-navy-950 text-white border border-slate-800 flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.18)] group-hover:-translate-y-0.5 transition-transform duration-200">
+                  <div className="w-12 h-12 rounded-full bg-navy-950 text-white border border-slate-800 flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.22)] group-hover:-translate-y-0.5 transition-transform duration-200">
                     <IconComp className="w-6 h-6" />
                   </div>
                 </div>

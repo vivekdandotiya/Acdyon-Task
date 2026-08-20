@@ -16,7 +16,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
         <div className="glass-card-light rounded-3xl border border-slate-900/15 p-8 sm:p-12 lg:p-16 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.16)] relative overflow-hidden subtle-grid-bg">
           <div className="max-w-3xl">
             {/* Eyebrow Box */}
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-lg bg-slate-100 text-navy-950 text-xs font-bold uppercase tracking-wider mb-6 border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-slate-100 text-navy-950 text-xs font-bold uppercase tracking-wider mb-6 border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
               <Calendar className="w-3.5 h-3.5 text-acdyon-blue" />
               <span>Personalized Advisory</span>
             </div>
@@ -31,10 +31,11 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
               Start with a guided conversation about your professional background, goals, and the pathway you're considering. Our advisors help bring clarity to your next career milestone.
             </p>
 
-            {/* Principles Cards with Glass Box Design */}
+            {/* Principles Cards with Circular Icon Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               <div className="p-4 rounded-2xl bg-white border border-slate-900/15 flex items-start space-x-3 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-                <div className="w-9 h-9 rounded-xl bg-navy-950 text-white border border-slate-800 flex items-center justify-center shrink-0 mt-0.5 shadow-subtle">
+                {/* Circular Icon Container */}
+                <div className="w-9 h-9 rounded-full bg-navy-950 text-white border border-slate-800 flex items-center justify-center shrink-0 mt-0.5 shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
                   <MessageSquare className="w-4.5 h-4.5" />
                 </div>
                 <div>
@@ -44,7 +45,8 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
               </div>
 
               <div className="p-4 rounded-2xl bg-white border border-slate-900/15 flex items-start space-x-3 shadow-[0_6px_20px_rgba(0,0,0,0.06)]">
-                <div className="w-9 h-9 rounded-xl bg-navy-950 text-white border border-slate-800 flex items-center justify-center shrink-0 mt-0.5 shadow-subtle">
+                {/* Circular Icon Container */}
+                <div className="w-9 h-9 rounded-full bg-navy-950 text-white border border-slate-800 flex items-center justify-center shrink-0 mt-0.5 shadow-[0_4px_12px_rgba(0,0,0,0.2)]">
                   <Compass className="w-4.5 h-4.5" />
                 </div>
                 <div>
