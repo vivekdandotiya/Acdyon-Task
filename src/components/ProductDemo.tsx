@@ -96,7 +96,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-slate-900/15 text-navy-950 text-xs font-bold uppercase tracking-wider mb-4 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-xl bg-white border border-slate-900/15 text-navy-950 text-xs font-bold uppercase tracking-wider mb-4 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
             <Sparkles className="w-3.5 h-3.5 text-acdyon-blue" />
             <span>Interactive Pathway Discovery</span>
           </div>
@@ -131,7 +131,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
               />
             </div>
 
-            {/* 4 Step Navigation Buttons with Circular Step Badges */}
+            {/* 4 Step Navigation Buttons with Defined Rounded-XL Step Badges */}
             <div className="grid grid-cols-4 gap-2 sm:gap-3 relative z-10">
               {steps.map((step, idx) => {
                 const stepNum = idx + 1;
@@ -155,9 +155,9 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                         : 'bg-slate-100/70 border-slate-900/10 text-slate-400 opacity-75 cursor-not-allowed'
                     }`}
                   >
-                    {/* Circular Step Badge with Black Edge & Black Shadow */}
+                    {/* Defined Rounded-XL Step Box Badge (NOT CIRCLE) */}
                     <div
-                      className={`w-6.5 h-6.5 sm:w-7.5 sm:h-7.5 rounded-full flex items-center justify-center font-bold text-xs mr-0 sm:mr-2.5 mb-1.5 sm:mb-0 shrink-0 border shadow-[0_4px_12px_rgba(0,0,0,0.12)] ${
+                      className={`w-6.5 h-6.5 sm:w-7.5 sm:h-7.5 rounded-xl flex items-center justify-center font-bold text-xs mr-0 sm:mr-2.5 mb-1.5 sm:mb-0 shrink-0 border shadow-[0_4px_12px_rgba(0,0,0,0.12)] ${
                         isActive
                           ? 'bg-white text-navy-950 border-white'
                           : isCompleted
@@ -189,7 +189,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
           {/* Generating Indicator Overlay */}
           {isGenerating ? (
             <div className="py-16 flex flex-col items-center justify-center text-center space-y-4">
-              <div className="w-12 h-12 rounded-full bg-navy-950 text-white border border-slate-800 shadow-[0_8px_24px_rgba(0,0,0,0.2)] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-2xl bg-navy-950 text-white border border-slate-800 shadow-[0_8px_24px_rgba(0,0,0,0.2)] flex items-center justify-center">
                 <Loader2 className="w-6 h-6 animate-spin text-acdyon-blueLight" />
               </div>
               <div>
@@ -236,8 +236,8 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                               : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          {/* Circular Circle Icon Badge */}
-                          <div className="w-10 h-10 rounded-full bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                          {/* Defined Rounded-XL Box Icon Container */}
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
                             {getGoalIcon(pathway.id)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -307,8 +307,8 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                               : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          {/* Circular Circle Icon Badge */}
-                          <div className="w-9 h-9 rounded-full bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                          {/* Defined Rounded-XL Box Icon Container */}
+                          <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
                             {getContextIcon(ctx.iconName)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -382,8 +382,8 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                               : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          {/* Circular Circle Icon Badge */}
-                          <div className="w-9 h-9 rounded-full bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
+                          {/* Defined Rounded-XL Box Icon Container */}
+                          <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-[0_4px_12px_rgba(0,0,0,0.1)]">
                             {getPriorityIcon(prio.iconName)}
                           </div>
                           <div className="flex-1 min-w-0">

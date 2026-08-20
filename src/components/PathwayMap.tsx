@@ -70,7 +70,7 @@ export const PathwayMap: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section Header */}
         <Reveal className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-navy-950 bg-slate-100 px-3.5 py-1 rounded-full border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
+          <span className="text-xs font-bold uppercase tracking-wider text-navy-950 bg-slate-100 px-3.5 py-1 rounded-xl border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
             Pathway Mapping Framework
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight mt-4 mb-4">
@@ -116,9 +116,9 @@ export const PathwayMap: React.FC = () => {
                         : 'bg-white text-slate-700 border-slate-900/15 hover:border-slate-900/30 hover:bg-slate-50 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                     }`}
                   >
-                    {/* Circular Node Badge with Black Edge & Black Shadow */}
+                    {/* Defined Rounded-XL Node Badge Box (NOT CIRCLE) */}
                     <div
-                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center mr-3.5 shrink-0 border transition-transform duration-200 shadow-[0_4px_12px_rgba(0,0,0,0.14)] ${
+                      className={`w-9 h-9 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center mr-3.5 shrink-0 border transition-transform duration-200 shadow-[0_4px_12px_rgba(0,0,0,0.14)] ${
                         isActive
                           ? 'bg-white text-navy-950 border-white'
                           : 'bg-slate-100 text-slate-700 border-slate-900/15'
@@ -160,8 +160,8 @@ export const PathwayMap: React.FC = () => {
                 >
                   <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-900/10">
                     <div className="flex items-center space-x-3">
-                      {/* Circular Spotlight Icon Badge */}
-                      <div className="w-12 h-12 rounded-full bg-navy-950 text-white border border-slate-800 flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.2)]">
+                      {/* Defined Rounded-2XL Spotlight Icon Box */}
+                      <div className="w-12 h-12 rounded-2xl bg-navy-950 text-white border border-slate-800 flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.2)]">
                         <IconComp className="w-6 h-6" />
                       </div>
                       <div>
@@ -173,7 +173,7 @@ export const PathwayMap: React.FC = () => {
                         </h3>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-slate-700 bg-white border border-slate-900/15 px-3 py-1 rounded-full shadow-subtle">
+                    <span className="text-xs font-bold text-slate-700 bg-white border border-slate-900/15 px-3 py-1 rounded-xl shadow-subtle">
                       Interactive Map Node
                     </span>
                   </div>
@@ -192,7 +192,7 @@ export const PathwayMap: React.FC = () => {
                           key={dIdx}
                           className="bg-white p-3.5 rounded-xl border border-slate-900/15 text-xs font-semibold text-navy-950 flex items-center shadow-[0_4px_14px_rgba(0,0,0,0.06)]"
                         >
-                          <span className="w-2 h-2 rounded-full bg-navy-950 mr-2 shrink-0" />
+                          <span className="w-2 h-2 rounded-sm bg-navy-950 mr-2 shrink-0" />
                           <span>{detail}</span>
                         </div>
                       ))}

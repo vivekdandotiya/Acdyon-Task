@@ -54,32 +54,32 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
   const getIcon = (id: string) => {
     switch (id) {
       case 'ai-automation':
-        return <Bot className="w-4 h-4" />;
+        return <Bot className="w-4.5 h-4.5" />;
       case 'ai-leadership':
-        return <Brain className="w-4 h-4" />;
+        return <Brain className="w-4.5 h-4.5" />;
       case 'cybersecurity':
-        return <ShieldCheck className="w-4 h-4" />;
+        return <ShieldCheck className="w-4.5 h-4.5" />;
       case 'executive-growth':
-        return <Target className="w-4 h-4" />;
+        return <Target className="w-4.5 h-4.5" />;
       default:
-        return <Layers className="w-4 h-4" />;
+        return <Layers className="w-4.5 h-4.5" />;
     }
   };
 
   return (
-    <div className="w-full glass-card-light rounded-2xl sm:rounded-3xl border border-slate-900/15 shadow-[0_24px_55px_-10px_rgba(0,0,0,0.16)] p-5 sm:p-7 relative overflow-hidden subtle-grid-bg transition-all duration-300 hover:shadow-[0_28px_65px_-10px_rgba(0,0,0,0.2)]">
+    <div className="w-full glass-card-light rounded-3xl border border-slate-900/15 shadow-[0_24px_55px_-10px_rgba(0,0,0,0.16)] p-5 sm:p-7 relative overflow-hidden subtle-grid-bg transition-all duration-300 hover:shadow-[0_28px_65px_-10px_rgba(0,0,0,0.2)]">
       {/* 1. Glass Header: PATHWAY AI (left) | LIVE PREVIEW BOX (right) */}
       <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-900/10 relative z-10 select-none">
         <div className="flex items-center space-x-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-navy-950 shadow-sm" />
+          <div className="w-2.5 h-2.5 rounded-sm bg-navy-950 shadow-sm" />
           <span className="text-xs font-extrabold uppercase tracking-widest text-navy-950">
             PATHWAY AI
           </span>
         </div>
 
-        {/* Status Badge Box with Circular Indicator */}
-        <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-slate-100 border border-slate-900/15 text-[11px] font-bold text-navy-950 uppercase tracking-wider shadow-subtle">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        {/* Defined Box Status Badge */}
+        <div className="flex items-center space-x-1.5 px-3 py-1 rounded-xl bg-slate-100 border border-slate-900/15 text-[11px] font-bold text-navy-950 uppercase tracking-wider shadow-subtle">
+          <span className="w-2 h-2 rounded-sm bg-emerald-500" />
           <span>LIVE PREVIEW</span>
         </div>
       </div>
@@ -87,7 +87,7 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
       {/* 2. Step Label & Question */}
       <div className="mb-4 relative z-10">
         <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
-          <span className="px-2 py-0.5 rounded-full bg-slate-200/80 border border-slate-900/15 text-[10px] text-navy-950 font-mono shadow-subtle">
+          <span className="px-2 py-0.5 rounded-lg bg-slate-200/80 border border-slate-900/15 text-[10px] text-navy-950 font-mono shadow-subtle">
             STEP 01
           </span>
           <span>•</span>
@@ -98,26 +98,26 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
         </h3>
       </div>
 
-      {/* 3. Option Cards with Circular Icon Badges, Black Edges & Black Shadows */}
-      <div className="grid grid-cols-2 gap-2.5 mb-5 relative z-10">
+      {/* 3. Option Box Cards with Defined Box Icon Containers (NOT CIRCLES), Black Edges & Black Shadows */}
+      <div className="grid grid-cols-2 gap-3 mb-5 relative z-10">
         {Object.values(PATHWAYS).map((pathway) => {
           const isSelected = pathway.id === selectedPathwayId;
           return (
             <button
               key={pathway.id}
               onClick={() => handlePathwayClick(pathway.id)}
-              className={`relative flex items-center p-3 rounded-2xl border text-left transition-all duration-200 focus:outline-none group ${
+              className={`relative flex items-center p-3.5 rounded-2xl border text-left transition-all duration-200 focus:outline-none group ${
                 isSelected
-                  ? 'bg-white border-navy-950 text-navy-950 shadow-[0_8px_22px_rgba(0,0,0,0.16)] ring-1 ring-navy-950/20 -translate-y-0.5'
+                  ? 'bg-white border-navy-950 text-navy-950 shadow-[0_10px_25px_rgba(0,0,0,0.16)] ring-1 ring-navy-950/20 -translate-y-0.5'
                   : 'bg-white/90 border-slate-900/15 text-slate-700 hover:border-slate-900/30 hover:shadow-[0_6px_18px_rgba(0,0,0,0.08)] hover:-translate-y-0.5'
               }`}
             >
-              {/* Circular Circle Icon Badge with Black Edge & Black Shadow */}
+              {/* Defined Rounded-XL Box Icon Container (NOT CIRCLE) with Black Edge & Black Shadow */}
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center mr-2.5 shrink-0 transition-all duration-200 border ${
+                className={`w-9 h-9 rounded-xl flex items-center justify-center mr-3 shrink-0 transition-all duration-200 border ${
                   isSelected
-                    ? 'bg-navy-950 text-white border-navy-950 shadow-[0_4px_12px_rgba(0,0,0,0.25)]'
-                    : 'bg-slate-100 text-slate-700 border-slate-900/15 shadow-[0_3px_10px_rgba(0,0,0,0.08)] group-hover:bg-slate-200'
+                    ? 'bg-navy-950 text-white border-navy-950 shadow-[0_4px_14px_rgba(0,0,0,0.25)]'
+                    : 'bg-slate-100 text-slate-800 border-slate-900/15 shadow-[0_3px_10px_rgba(0,0,0,0.08)] group-hover:bg-slate-200'
                 }`}
               >
                 {getIcon(pathway.id)}
@@ -169,9 +169,9 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
                   {analysisSteps[analysisStepIndex]}
                 </span>
               </div>
-              <div className="w-32 h-1 bg-slate-800 rounded-full overflow-hidden">
+              <div className="w-32 h-1 bg-slate-800 rounded-xl overflow-hidden">
                 <motion.div
-                  className="h-full bg-acdyon-blue"
+                  className="h-full bg-acdyon-blue rounded-xl"
                   initial={{ width: '0%' }}
                   animate={{ width: `${(analysisStepIndex + 1) * 33.3}%` }}
                   transition={{ duration: 0.3 }}
@@ -196,12 +196,12 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
                 {currentPathway.description}
               </p>
 
-              {/* 3 Capability Tags with Pill Edge Design */}
+              {/* 3 Capability Tags with Rounded Box Edge Design */}
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {currentPathway.keyCapabilities.slice(0, 3).map((cap, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-slate-900 text-slate-200 border border-slate-800 shadow-sm"
+                    className="inline-flex items-center px-2.5 py-1 rounded-xl text-[11px] font-medium bg-slate-900 text-slate-200 border border-slate-800 shadow-sm"
                   >
                     {cap}
                   </span>
