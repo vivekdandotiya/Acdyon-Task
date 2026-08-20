@@ -3,6 +3,7 @@ import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 export const CustomCursor: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [hasMoved, setHasMoved] = useState<boolean>(false);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -16,18 +17,20 @@ export const CustomCursor: React.FC = () => {
     if (window.matchMedia('(pointer: coarse)').matches) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    setIsVisible(true);
-
     const handleMouseMove = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
+      if (!hasMoved) {
+        setHasMoved(true);
+        setIsVisible(true);
+      }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [cursorX, cursorY]);
+  }, [cursorX, cursorY, hasMoved]);
 
-  if (!isVisible) return null;
+  if (!isVisible || !hasMoved) return null;
 
   return (
     <motion.div
