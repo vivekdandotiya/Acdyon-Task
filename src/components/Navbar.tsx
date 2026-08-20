@@ -71,7 +71,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
 
   return (
     <>
-      {/* Signature Floating Navigation Bar */}
+      {/* Signature Floating Glassmorphic Navigation Bar with Defined Black Edges */}
       <motion.header
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -81,10 +81,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
         <div className="max-w-[1240px] mx-auto pointer-events-auto">
           <motion.div
             animate={{
-              backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.88)' : 'rgba(250, 249, 245, 0)',
-              backdropFilter: isScrolled ? 'blur(18px)' : 'blur(0px)',
-              borderColor: isScrolled ? 'rgba(226, 232, 240, 0.85)' : 'rgba(226, 232, 240, 0)',
-              boxShadow: isScrolled ? '0 8px 30px rgba(0, 0, 0, 0.05)' : '0 0 0 rgba(0,0,0,0)',
+              backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.82)' : 'rgba(250, 249, 245, 0.75)',
+              backdropFilter: 'blur(20px) saturate(180%)',
+              borderColor: isScrolled ? 'rgba(15, 23, 42, 0.14)' : 'rgba(15, 23, 42, 0.08)',
+              boxShadow: isScrolled
+                ? '0 18px 45px -10px rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.05)'
+                : '0 8px 30px -10px rgba(0, 0, 0, 0.06)',
               paddingTop: isScrolled ? '0.65rem' : '0.85rem',
               paddingBottom: isScrolled ? '0.65rem' : '0.85rem',
             }}
@@ -93,7 +95,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               isScrolled ? 'glass-nav' : ''
             }`}
           >
-            {/* LEFT: Logo Matching Image (Executive Monogram + AcdyOn Pathway) */}
+            {/* LEFT: Logo Matching Image (Executive Monogram Box + AcdyOn Pathway) */}
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -103,7 +105,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               whileTap={{ scale: 0.97 }}
               className="flex items-center space-x-2.5 cursor-pointer group select-none"
             >
-              <AcdyonLogoIcon className="w-8 h-8 rounded-xl shadow-subtle" idSuffix="nav" />
+              <div className="w-8.5 h-8.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.25)]">
+                <AcdyonLogoIcon className="w-8 h-8 rounded-xl" idSuffix="nav" />
+              </div>
               <div className="flex items-center space-x-1.5">
                 <span className="text-lg font-bold tracking-tight text-navy-950 group-hover:text-acdyon-blue transition-colors duration-200">
                   AcdyOn
@@ -130,8 +134,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
                     transition={{ duration: 0.4, delay, ease: easeOutCustom }}
                     onMouseEnter={() => setHoveredLink(link.id)}
                     onMouseLeave={() => setHoveredLink(null)}
-                    className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-200 rounded-lg ${
-                      isActive ? 'text-navy-950' : 'text-slate-600 hover:text-navy-950'
+                    className={`relative px-4 py-2 text-sm font-semibold transition-colors duration-200 rounded-xl ${
+                      isActive ? 'text-navy-950 font-bold' : 'text-slate-600 hover:text-navy-950'
                     }`}
                   >
                     <span className="relative z-10">{link.label}</span>
@@ -140,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
                     {isActive && (
                       <motion.div
                         layoutId="activeNavIndicator"
-                        className="absolute bottom-0 left-3 right-3 h-0.5 bg-acdyon-blue rounded-full"
+                        className="absolute bottom-0 left-3 right-3 h-0.5 bg-navy-950 rounded-full"
                         transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                       />
                     )}
@@ -149,7 +153,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
                     {isHovered && !isActive && (
                       <motion.div
                         layoutId="hoverNavBg"
-                        className="absolute inset-0 bg-slate-100/70 rounded-lg -z-0"
+                        className="absolute inset-0 bg-slate-200/60 rounded-xl border border-slate-900/10 -z-0"
                         transition={{ duration: 0.18, ease: 'easeOut' }}
                       />
                     )}
@@ -167,9 +171,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
             >
               <motion.button
                 onClick={onOpenConsultation}
-                whileHover={{ y: -2, boxShadow: '0 8px 24px rgba(15, 23, 42, 0.12)' }}
+                whileHover={{ y: -2, boxShadow: '0 10px 25px -4px rgba(15, 23, 42, 0.25)' }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center px-4.5 py-2 rounded-xl text-xs font-bold text-navy-950 bg-slate-100 hover:bg-navy-950 hover:text-white border border-slate-200/90 transition-all duration-200 shadow-subtle group focus:outline-none"
+                className="inline-flex items-center px-4.5 py-2 rounded-xl text-xs font-bold text-navy-950 bg-white hover:bg-navy-950 hover:text-white border border-slate-900/20 transition-all duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.08)] group focus:outline-none"
               >
                 <span>Book Consultation</span>
                 <ArrowUpRight className="w-3.5 h-3.5 ml-1.5 text-slate-500 group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-200" />
@@ -180,7 +184,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
             <div className="flex items-center md:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2 rounded-xl text-navy-950 hover:bg-slate-100 transition-colors focus:outline-none"
+                className="p-2 rounded-xl text-navy-950 hover:bg-slate-100 transition-colors focus:outline-none border border-slate-900/15"
                 aria-label="Toggle navigation menu"
               >
                 {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -206,7 +210,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3, ease: easeOutCustom }}
-              className="pt-24 pb-8 px-6 bg-white border-b border-slate-200 shadow-elevated"
+              className="pt-24 pb-8 px-6 bg-white/95 backdrop-blur-xl border-b border-slate-900/15 shadow-[0_20px_50px_rgba(0,0,0,0.2)]"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex flex-col space-y-4">
@@ -233,7 +237,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation, onLogoClick 
                       setIsMobileMenuOpen(false);
                       onOpenConsultation();
                     }}
-                    className="w-full inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-sm font-bold text-white bg-acdyon-blue hover:bg-acdyon-blueHover shadow-card transition-colors"
+                    className="w-full inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-sm font-bold text-white bg-navy-950 hover:bg-slate-800 shadow-[0_8px_24px_rgba(0,0,0,0.2)] transition-colors border border-slate-800"
                   >
                     <span>Book Advisory Consultation</span>
                     <ArrowUpRight className="w-4 h-4 ml-1.5" />

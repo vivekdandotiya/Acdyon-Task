@@ -30,8 +30,8 @@ export const BrandStory: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
-      {/* Dark Ambient Gray Dot Background Layer */}
+    <section className="py-20 lg:py-28 bg-navy-950 text-white relative overflow-hidden">
+      {/* Dark Ambient Grid Background Layer */}
       <div className="absolute inset-0 dot-pattern-dark opacity-75 pointer-events-none -z-0" />
 
       {/* Ambient Glow */}
@@ -46,8 +46,8 @@ export const BrandStory: React.FC = () => {
           {/* Left Column: Executive Messaging */}
           <div className="lg:col-span-6">
             <Reveal>
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-800 border border-slate-700 mb-6 text-acdyon-indigoLight">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-slate-900 border border-slate-700 mb-6 text-slate-200 shadow-subtle">
+                <Sparkles className="w-3.5 h-3.5 text-acdyon-blueLight" />
                 <span className="text-xs font-bold uppercase tracking-wider">
                   Executive Positioning
                 </span>
@@ -60,7 +60,7 @@ export const BrandStory: React.FC = () => {
               </p>
             </Reveal>
 
-            {/* 3 Staggered Narrative Stages */}
+            {/* 3 Staggered Narrative Stage Cards with Glass Effect */}
             <div className="space-y-4">
               {stages.map((stg, idx) => {
                 const IconComp = stg.icon;
@@ -71,14 +71,15 @@ export const BrandStory: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.55, delay: idx * 0.12, ease: easeOutCustom }}
-                    className="p-5 rounded-2xl bg-slate-800/80 border border-slate-700/80 hover:border-slate-600 transition-all duration-300 flex items-start space-x-4 group"
+                    whileHover={{ y: -3, boxShadow: '0 20px 45px rgba(0,0,0,0.35)' }}
+                    className="p-5 rounded-2xl glass-card-dark border border-slate-700/80 hover:border-slate-600 transition-all duration-300 flex items-start space-x-4 group shadow-[0_16px_35px_rgba(0,0,0,0.28)]"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-slate-700/90 text-acdyon-blueLight flex items-center justify-center shrink-0 group-hover:bg-acdyon-blue group-hover:text-white transition-colors duration-200">
+                    <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 text-white flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-navy-950 transition-colors duration-200 shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
                       <IconComp className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="flex items-center space-x-2 mb-1">
-                        <span className="text-xs font-extrabold uppercase text-acdyon-indigoLight tracking-wider">
+                        <span className="text-xs font-extrabold uppercase text-acdyon-blueLight tracking-wider">
                           Phase {stg.step}
                         </span>
                         <span className="text-slate-500 text-xs">•</span>
@@ -106,24 +107,24 @@ export const BrandStory: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.75, ease: easeOutCustom }}
-              className="bg-slate-800/90 rounded-3xl p-7 border border-slate-700 shadow-2xl relative overflow-hidden"
+              className="glass-card-dark rounded-3xl p-7 border border-slate-700 shadow-[0_24px_60px_rgba(0,0,0,0.45)] relative overflow-hidden"
             >
               {/* Executive Architecture Mockup */}
               <div className="pb-4 mb-6 border-b border-slate-700 flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                  <div className="w-2.5 h-2.5 rounded-sm bg-emerald-500" />
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-300">
                     AcdyOn Governance Architecture
                   </span>
                 </div>
-                <span className="text-[11px] font-semibold text-acdyon-blueLight bg-blue-950 px-2.5 py-0.5 rounded-full border border-blue-800">
+                <span className="text-[11px] font-bold text-white bg-slate-900 px-2.5 py-1 rounded-lg border border-slate-700">
                   Applied Framework
                 </span>
               </div>
 
               {/* Graphic Process Cards */}
               <div className="space-y-3.5">
-                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between">
+                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
                   <div className="flex items-center space-x-3">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                     <div>
@@ -134,7 +135,7 @@ export const BrandStory: React.FC = () => {
                   <span className="text-[10px] font-mono text-slate-400 bg-slate-800 px-2 py-1 rounded">VERIFIED</span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between">
+                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
                   <div className="flex items-center space-x-3">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                     <div>
@@ -145,7 +146,7 @@ export const BrandStory: React.FC = () => {
                   <span className="text-[10px] font-mono text-acdyon-blueLight bg-slate-800 px-2 py-1 rounded">ACTIVE</span>
                 </div>
 
-                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between">
+                <div className="p-4 rounded-xl bg-slate-900/90 border border-slate-700 flex items-center justify-between shadow-[0_4px_14px_rgba(0,0,0,0.2)]">
                   <div className="flex items-center space-x-3">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                     <div>

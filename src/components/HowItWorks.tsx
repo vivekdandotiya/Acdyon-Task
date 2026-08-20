@@ -34,7 +34,7 @@ export const HowItWorks: React.FC = () => {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section Header with Reveal */}
         <Reveal className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-acdyon-blue bg-acdyon-blueLight px-3 py-1 rounded-full border border-acdyon-blue/20">
+          <span className="text-xs font-bold uppercase tracking-wider text-navy-950 bg-slate-100 px-3 py-1 rounded-lg border border-slate-900/15 shadow-[0_4px_14px_rgba(0,0,0,0.05)]">
             Guided Framework
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight mt-4 mb-4">
@@ -45,16 +45,16 @@ export const HowItWorks: React.FC = () => {
           </p>
         </Reveal>
 
-        {/* 3 Step Cards Grid with Connecting Progress Line (1000ms height/width growth) */}
+        {/* 3 Step Cards Grid with Glass Effect & Defined Black Edges */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-          {/* Animated Horizontal Connecting Line between cards on desktop */}
-          <div className="absolute top-1/2 left-[15%] right-[15%] h-[2px] bg-slate-100 -z-0 hidden md:block">
+          {/* Animated Horizontal Connecting Line */}
+          <div className="absolute top-1/2 left-[15%] right-[15%] h-[2px] bg-slate-200 -z-0 hidden md:block">
             <motion.div
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.0, ease: easeOutCustom, delay: 0.1 }}
-              className="h-full bg-acdyon-blue/40 origin-left"
+              className="h-full bg-navy-950 origin-left"
             />
           </div>
 
@@ -67,15 +67,16 @@ export const HowItWorks: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.65, delay: index * 0.12, ease: easeOutCustom }}
-                className="bg-slate-50/80 rounded-3xl p-8 border border-slate-200/80 hover:border-slate-300 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] transition-all duration-300 relative group z-10"
+                whileHover={{ y: -4, boxShadow: '0 24px 55px -10px rgba(0,0,0,0.18)' }}
+                className="glass-card-light rounded-3xl p-8 border border-slate-900/15 shadow-[0_18px_45px_-12px_rgba(0,0,0,0.12)] transition-all duration-300 relative group z-10"
               >
-                {/* Large Elegant Number */}
+                {/* Large Elegant Number & Defined Box Icon */}
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-5xl font-extrabold text-slate-200 group-hover:text-acdyon-blue/30 transition-colors duration-200 tracking-tighter">
+                  <span className="text-5xl font-extrabold text-slate-300 group-hover:text-navy-950 transition-colors duration-200 tracking-tighter">
                     {step.num}
                   </span>
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200 flex items-center justify-center text-navy-950 shadow-subtle group-hover:-translate-y-0.5 transition-transform duration-200">
-                    <IconComp className="w-6 h-6 text-acdyon-blue" />
+                  <div className="w-12 h-12 rounded-2xl bg-navy-950 text-white border border-slate-800 flex items-center justify-center shadow-[0_6px_20px_rgba(0,0,0,0.18)] group-hover:-translate-y-0.5 transition-transform duration-200">
+                    <IconComp className="w-6 h-6" />
                   </div>
                 </div>
 

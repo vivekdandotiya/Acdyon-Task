@@ -96,8 +96,8 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-acdyon-indigoLight text-acdyon-indigo text-xs font-bold uppercase tracking-wider mb-4 border border-acdyon-indigo/20">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-lg bg-white border border-slate-900/15 text-navy-950 text-xs font-bold uppercase tracking-wider mb-4 shadow-[0_4px_14px_rgba(0,0,0,0.06)]">
+            <Sparkles className="w-3.5 h-3.5 text-acdyon-blue" />
             <span>Interactive Pathway Discovery</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-950 tracking-tight mb-4">
@@ -108,14 +108,14 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
           </p>
         </div>
 
-        {/* Multi-Step Interactive Container */}
-        <div className="bg-white rounded-3xl border border-slate-200/90 shadow-elevated p-6 sm:p-8 lg:p-10">
-          {/* Progress Header Indicator Bar (Section 5) */}
-          <div className="relative mb-8 sm:mb-10 pb-6 border-b border-slate-100">
+        {/* Multi-Step Glassy Interactive Container with Black Edges */}
+        <div className="glass-card-light rounded-3xl border border-slate-900/15 shadow-[0_24px_60px_-12px_rgba(0,0,0,0.16)] p-6 sm:p-8 lg:p-10">
+          {/* Progress Header Indicator Bar */}
+          <div className="relative mb-8 sm:mb-10 pb-6 border-b border-slate-900/10">
             {/* Animated Connecting Progress Line */}
-            <div className="absolute top-[28px] sm:top-[34px] left-[12%] right-[12%] h-[2px] bg-slate-100 -z-0 hidden sm:block">
+            <div className="absolute top-[28px] sm:top-[34px] left-[12%] right-[12%] h-[2px] bg-slate-200 -z-0 hidden sm:block">
               <motion.div
-                className="h-full bg-acdyon-blue rounded-full"
+                className="h-full bg-navy-950 rounded-full"
                 initial={{ width: '0%' }}
                 animate={{
                   width:
@@ -131,7 +131,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
               />
             </div>
 
-            {/* 4 Step Navigation Buttons */}
+            {/* 4 Step Navigation Box Buttons */}
             <div className="grid grid-cols-4 gap-2 sm:gap-3 relative z-10">
               {steps.map((step, idx) => {
                 const stepNum = idx + 1;
@@ -149,19 +149,20 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                     disabled={stepNum > activeStep && !isCompleted}
                     className={`flex flex-col sm:flex-row items-center sm:items-start p-2.5 sm:p-3.5 rounded-2xl border text-left transition-all duration-200 focus:outline-none ${
                       isActive
-                        ? 'bg-navy-950 text-white border-navy-950 shadow-card'
+                        ? 'bg-navy-950 text-white border-navy-950 shadow-[0_8px_24px_rgba(0,0,0,0.22)]'
                         : isCompleted
-                        ? 'bg-acdyon-blueLight/40 border-acdyon-blue/30 text-navy-950 cursor-pointer'
-                        : 'bg-slate-50 border-slate-200/80 text-slate-400 opacity-80 cursor-not-allowed'
+                        ? 'bg-white border-slate-900/20 text-navy-950 cursor-pointer shadow-[0_4px_14px_rgba(0,0,0,0.06)]'
+                        : 'bg-slate-100/70 border-slate-900/10 text-slate-400 opacity-75 cursor-not-allowed'
                     }`}
                   >
+                    {/* Defined Step Box Badge (No Circle) */}
                     <div
-                      className={`w-6 h-6 sm:w-7 sm:h-7 rounded-lg flex items-center justify-center font-bold text-xs mr-0 sm:mr-2.5 mb-1.5 sm:mb-0 shrink-0 ${
+                      className={`w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-xl flex items-center justify-center font-bold text-xs mr-0 sm:mr-2.5 mb-1.5 sm:mb-0 shrink-0 border ${
                         isActive
-                          ? 'bg-acdyon-blue text-white'
+                          ? 'bg-white text-navy-950 border-white'
                           : isCompleted
-                          ? 'bg-acdyon-blue text-white'
-                          : 'bg-slate-200 text-slate-500'
+                          ? 'bg-navy-950 text-white border-navy-950'
+                          : 'bg-slate-200 text-slate-500 border-slate-300'
                       }`}
                     >
                       {isCompleted ? <Check className="w-3.5 h-3.5 stroke-[3]" /> : step.number}
@@ -169,7 +170,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                     <div className="min-w-0">
                       <p
                         className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider truncate ${
-                          isActive ? 'text-slate-300' : 'text-slate-400'
+                          isActive ? 'text-slate-300' : 'text-slate-500'
                         }`}
                       >
                         0{stepNum}
@@ -188,8 +189,8 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
           {/* Generating Indicator Overlay */}
           {isGenerating ? (
             <div className="py-16 flex flex-col items-center justify-center text-center space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-acdyon-blueLight text-acdyon-blue flex items-center justify-center">
-                <Loader2 className="w-6 h-6 animate-spin" />
+              <div className="w-12 h-12 rounded-2xl bg-navy-950 text-white border border-slate-800 shadow-[0_8px_24px_rgba(0,0,0,0.2)] flex items-center justify-center">
+                <Loader2 className="w-6 h-6 animate-spin text-acdyon-blueLight" />
               </div>
               <div>
                 <h4 className="text-xl font-bold text-navy-950">Mapping your direction...</h4>
@@ -199,7 +200,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
               </div>
             </div>
           ) : (
-            /* Step Content Panels (Section 6 Step Transitions) */
+            /* Step Content Panels */
             <AnimatePresence mode="wait">
               {/* STEP 1: GOAL */}
               {activeStep === 1 && (
@@ -231,11 +232,11 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                           onClick={() => setSelectedGoal(pathway.id)}
                           className={`p-5 rounded-2xl border text-left transition-all duration-200 focus:outline-none flex items-start space-x-4 ${
                             isSelected
-                              ? 'bg-acdyon-blueLight/50 border-acdyon-blue ring-2 ring-acdyon-blue/20 shadow-subtle -translate-y-0.5'
-                              : 'bg-white hover:bg-slate-50/80 border-slate-200 hover:border-slate-300'
+                              ? 'bg-white border-navy-950 shadow-[0_10px_25px_rgba(0,0,0,0.12)] ring-1 ring-navy-950/20 -translate-y-0.5'
+                              : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-subtle">
+                          <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-subtle">
                             {getGoalIcon(pathway.id)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -244,7 +245,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                                 {pathway.title}
                               </h4>
                               {isSelected && (
-                                <span className="text-xs font-semibold text-acdyon-blue flex items-center">
+                                <span className="text-xs font-bold text-navy-950 flex items-center">
                                   Selected <Check className="w-4 h-4 ml-1 stroke-[3]" />
                                 </span>
                               )}
@@ -262,7 +263,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                   <div className="flex justify-end">
                     <button
                       onClick={() => setActiveStep(2)}
-                      className="px-6 py-3.5 rounded-xl font-bold text-sm bg-navy-950 text-white hover:bg-slate-800 transition-all duration-200 flex items-center shadow-subtle"
+                      className="px-6 py-3.5 rounded-xl font-bold text-sm bg-navy-950 text-white hover:bg-slate-800 transition-all duration-200 flex items-center shadow-[0_8px_24px_rgba(0,0,0,0.2)] border border-slate-800"
                     >
                       <span>Next: Select your context</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -301,11 +302,11 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                           onClick={() => setSelectedContext(ctx.id)}
                           className={`p-4 rounded-2xl border text-left transition-all duration-200 focus:outline-none flex items-start space-x-3 ${
                             isSelected
-                              ? 'bg-acdyon-blueLight/50 border-acdyon-blue ring-2 ring-acdyon-blue/20 shadow-subtle -translate-y-0.5'
-                              : 'bg-white hover:bg-slate-50/80 border-slate-200 hover:border-slate-300'
+                              ? 'bg-white border-navy-950 shadow-[0_10px_25px_rgba(0,0,0,0.12)] ring-1 ring-navy-950/20 -translate-y-0.5'
+                              : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-subtle">
+                          <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-subtle">
                             {getContextIcon(ctx.iconName)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -313,7 +314,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                               <h4 className="text-sm font-bold text-navy-950 truncate">
                                 {ctx.title}
                               </h4>
-                              {isSelected && <Check className="w-4 h-4 text-acdyon-blue stroke-[3] shrink-0 ml-1" />}
+                              {isSelected && <Check className="w-4 h-4 text-navy-950 stroke-[3] shrink-0 ml-1" />}
                             </div>
                             <p className="text-xs text-slate-500 leading-snug line-clamp-2">
                               {ctx.description}
@@ -324,11 +325,11 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                     })}
                   </div>
 
-                  {/* Navigation Buttons (Back & Next) */}
+                  {/* Navigation Buttons */}
                   <div className="flex items-center justify-between">
                     <button
                       onClick={() => setActiveStep(1)}
-                      className="px-5 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:text-navy-950 hover:bg-slate-100 transition-colors flex items-center"
+                      className="px-5 py-3 rounded-xl font-semibold text-sm text-slate-700 border border-slate-900/15 hover:bg-slate-100 transition-colors flex items-center shadow-subtle"
                     >
                       <ArrowLeft className="w-4 h-4 mr-1.5" />
                       <span>Back</span>
@@ -336,7 +337,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
 
                     <button
                       onClick={() => setActiveStep(3)}
-                      className="px-6 py-3.5 rounded-xl font-bold text-sm bg-navy-950 text-white hover:bg-slate-800 transition-all duration-200 flex items-center shadow-subtle"
+                      className="px-6 py-3.5 rounded-xl font-bold text-sm bg-navy-950 text-white hover:bg-slate-800 transition-all duration-200 flex items-center shadow-[0_8px_24px_rgba(0,0,0,0.2)] border border-slate-800"
                     >
                       <span>Next: Choose your priority</span>
                       <ArrowRight className="w-4 h-4 ml-2" />
@@ -375,11 +376,11 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                           onClick={() => setSelectedPriority(prio.id)}
                           className={`p-4 rounded-2xl border text-left transition-all duration-200 focus:outline-none flex items-start space-x-3 ${
                             isSelected
-                              ? 'bg-acdyon-blueLight/50 border-acdyon-blue ring-2 ring-acdyon-blue/20 shadow-subtle -translate-y-0.5'
-                              : 'bg-white hover:bg-slate-50/80 border-slate-200 hover:border-slate-300'
+                              ? 'bg-white border-navy-950 shadow-[0_10px_25px_rgba(0,0,0,0.12)] ring-1 ring-navy-950/20 -translate-y-0.5'
+                              : 'bg-white/90 border-slate-900/15 hover:border-slate-900/30 hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]'
                           }`}
                         >
-                          <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center shrink-0 shadow-subtle">
+                          <div className="w-9 h-9 rounded-xl bg-slate-50 border border-slate-900/15 flex items-center justify-center shrink-0 shadow-subtle">
                             {getPriorityIcon(prio.iconName)}
                           </div>
                           <div className="flex-1 min-w-0">
@@ -387,7 +388,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                               <h4 className="text-sm font-bold text-navy-950 truncate">
                                 {prio.title}
                               </h4>
-                              {isSelected && <Check className="w-4 h-4 text-acdyon-blue stroke-[3] shrink-0 ml-1" />}
+                              {isSelected && <Check className="w-4 h-4 text-navy-950 stroke-[3] shrink-0 ml-1" />}
                             </div>
                             <p className="text-xs text-slate-500 leading-snug line-clamp-2">
                               {prio.description}
@@ -398,11 +399,11 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
                     })}
                   </div>
 
-                  {/* Navigation Buttons (Back & Generate Pathway) */}
+                  {/* Navigation Buttons */}
                   <div className="flex items-center justify-between">
                     <button
                       onClick={() => setActiveStep(2)}
-                      className="px-5 py-3 rounded-xl font-semibold text-sm text-slate-600 hover:text-navy-950 hover:bg-slate-100 transition-colors flex items-center"
+                      className="px-5 py-3 rounded-xl font-semibold text-sm text-slate-700 border border-slate-900/15 hover:bg-slate-100 transition-colors flex items-center shadow-subtle"
                     >
                       <ArrowLeft className="w-4 h-4 mr-1.5" />
                       <span>Back</span>
@@ -410,7 +411,7 @@ export const ProductDemo: React.FC<ProductDemoProps> = ({ onBookConsultation }) 
 
                     <button
                       onClick={handleNextFromPriority}
-                      className="px-7 py-3.5 rounded-xl font-bold text-sm bg-acdyon-blue text-white hover:bg-acdyon-blueHover shadow-card transition-all duration-200 flex items-center"
+                      className="px-7 py-3.5 rounded-xl font-bold text-sm bg-acdyon-blue text-white hover:bg-acdyon-blueHover shadow-[0_8px_24px_rgba(37,99,235,0.25)] transition-all duration-200 flex items-center"
                     >
                       <span>Generate Pathway Recommendation</span>
                       <ArrowRight className="w-4 h-4 ml-2" />

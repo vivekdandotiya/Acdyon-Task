@@ -31,18 +31,39 @@
   background-size: 36px 36px;
 }
 
-/* Custom Utilities for Premium Glassmorphic Effects & Micro-Interactions */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+/* Signature Ultra-Premium Glassmorphism & Defined Black Edge Box Utilities */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.04);
 }
 
-.glass-nav {
-  background: rgba(250, 249, 245, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 24px 50px -12px rgba(0, 0, 0, 0.35);
+}
+
+.premium-box-edge {
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.12);
+}
+
+.premium-box-edge-dark {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.45);
 }
 
 .subtle-grid-bg {
@@ -55,7 +76,7 @@
 .ai-gradient-border {
   position: relative;
   background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(79, 70, 229, 0.08) 100%);
-  border: 1px solid rgba(79, 70, 229, 0.2);
+  border: 1px solid rgba(15, 23, 42, 0.14);
 }
 
 /* Focus Ring Customization for Accessibility */

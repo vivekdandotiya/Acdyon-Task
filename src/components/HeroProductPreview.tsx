@@ -67,23 +67,29 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
   };
 
   return (
-    <div className="w-full bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-[0_20px_60px_rgba(15,23,42,0.08)] p-5 sm:p-7 relative overflow-hidden subtle-grid-bg transition-shadow duration-300">
-      {/* 1. Simplified Product Header: PATHWAY AI (left) | ● LIVE PREVIEW (right) */}
-      <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-100 relative z-10 select-none">
-        <span className="text-xs font-extrabold uppercase tracking-widest text-slate-800">
-          PATHWAY AI
-        </span>
+    <div className="w-full glass-card-light rounded-2xl sm:rounded-3xl border border-slate-900/15 shadow-[0_24px_55px_-10px_rgba(0,0,0,0.16)] p-5 sm:p-7 relative overflow-hidden subtle-grid-bg transition-all duration-300 hover:shadow-[0_28px_65px_-10px_rgba(0,0,0,0.2)]">
+      {/* 1. Simplified Glass Header: PATHWAY AI (left) | LIVE PREVIEW BOX (right) */}
+      <div className="flex items-center justify-between pb-3.5 mb-5 border-b border-slate-900/10 relative z-10 select-none">
+        <div className="flex items-center space-x-2">
+          <div className="w-2.5 h-2.5 rounded-sm bg-navy-950" />
+          <span className="text-xs font-extrabold uppercase tracking-widest text-navy-950">
+            PATHWAY AI
+          </span>
+        </div>
 
-        <div className="flex items-center space-x-1.5 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
-          <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        {/* Defined Status Badge Box */}
+        <div className="flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-900/15 text-[11px] font-bold text-navy-950 uppercase tracking-wider shadow-subtle">
+          <span className="w-2 h-2 rounded-sm bg-emerald-500" />
           <span>LIVE PREVIEW</span>
         </div>
       </div>
 
       {/* 2. Step Label & Question */}
       <div className="mb-4 relative z-10">
-        <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
-          <span>STEP 01</span>
+        <div className="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
+          <span className="px-1.5 py-0.5 rounded bg-slate-200/80 border border-slate-900/10 text-[10px] text-navy-950 font-mono">
+            STEP 01
+          </span>
           <span>•</span>
           <span>Focus</span>
         </div>
@@ -92,7 +98,7 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
         </h3>
       </div>
 
-      {/* 3. Simplified Option Cards (Icon + Title Only) */}
+      {/* 3. Option Cards with Defined Black Edge & Black Shadows */}
       <div className="grid grid-cols-2 gap-2.5 mb-5 relative z-10">
         {Object.values(PATHWAYS).map((pathway) => {
           const isSelected = pathway.id === selectedPathwayId;
@@ -102,15 +108,15 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
               onClick={() => handlePathwayClick(pathway.id)}
               className={`relative flex items-center p-3 rounded-xl border text-left transition-all duration-200 focus:outline-none group ${
                 isSelected
-                  ? 'bg-acdyon-blueLight/40 border-acdyon-blue text-navy-950 shadow-[0_4px_14px_rgba(37,99,235,0.08)]'
-                  : 'bg-white border-slate-200/90 text-slate-700 hover:border-slate-300 hover:shadow-[0_4px_14px_rgba(0,0,0,0.04)] hover:-translate-y-0.5'
+                  ? 'bg-white border-navy-950 text-navy-950 shadow-[0_8px_20px_rgba(0,0,0,0.14)] ring-1 ring-navy-950/20 -translate-y-0.5'
+                  : 'bg-white/90 border-slate-900/15 text-slate-700 hover:border-slate-900/30 hover:shadow-[0_6px_18px_rgba(0,0,0,0.08)] hover:-translate-y-0.5'
               }`}
             >
               <div
-                className={`w-7 h-7 rounded-lg flex items-center justify-center mr-2.5 shrink-0 transition-transform duration-200 ${
+                className={`w-7 h-7 rounded-lg flex items-center justify-center mr-2.5 shrink-0 transition-transform duration-200 border ${
                   isSelected
-                    ? 'bg-acdyon-blue text-white'
-                    : 'bg-slate-100 text-slate-600 group-hover:bg-slate-200'
+                    ? 'bg-navy-950 text-white border-navy-950'
+                    : 'bg-slate-100 text-slate-700 border-slate-900/10 group-hover:bg-slate-200'
                 }`}
               >
                 {getIcon(pathway.id)}
@@ -125,7 +131,7 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
               {isSelected && (
                 <motion.div
                   layoutId="selectedCheck"
-                  className="ml-1 text-acdyon-blue"
+                  className="ml-1 text-navy-950"
                   initial={{ scale: 0.7, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.18 }}
@@ -138,8 +144,8 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
         })}
       </div>
 
-      {/* 4. Streamlined Recommendation Card */}
-      <div className="rounded-2xl bg-slate-900 text-white p-5 shadow-[0_8px_24px_rgba(15,23,42,0.12)] relative overflow-hidden min-h-[190px] flex flex-col justify-between">
+      {/* 4. Streamlined Glassy Dark Recommendation Card */}
+      <div className="rounded-2xl bg-slate-950/95 backdrop-blur-xl text-white p-5 border border-slate-800 shadow-[0_18px_45px_rgba(0,0,0,0.35)] relative overflow-hidden min-h-[190px] flex flex-col justify-between">
         <div className="flex items-center justify-between mb-2 relative z-10">
           <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">
             RECOMMENDED PATHWAY
@@ -189,12 +195,12 @@ export const HeroProductPreview: React.FC<HeroProductPreviewProps> = ({
                 {currentPathway.description}
               </p>
 
-              {/* 3 Capability Tags */}
+              {/* 3 Capability Box Tags */}
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {currentPathway.keyCapabilities.slice(0, 3).map((cap, idx) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-medium bg-slate-800 text-slate-200 border border-slate-700/60"
+                    className="inline-flex items-center px-2 py-0.5 rounded-lg text-[11px] font-medium bg-slate-900 text-slate-200 border border-slate-800"
                   >
                     {cap}
                   </span>
